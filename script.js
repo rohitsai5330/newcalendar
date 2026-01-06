@@ -1,7 +1,7 @@
 const dropdown = document.getElementById("countryFilter");
 const rows = document.querySelectorAll("#holidayTable tbody tr");
 
-// ✅ Set UAE as default
+// ✅ Set UAE as default selection
 dropdown.value = "UAE";
 
 // ✅ Filter function
@@ -17,5 +17,5 @@ function filterRows() {
 // ✅ Apply filter on page load
 filterRows();
 
-// ✅ Apply filter on dropdown change
+// ✅ Apply filter when dropdown changes
 dropdown.addEventListener("change", filterRows);
