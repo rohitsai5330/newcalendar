@@ -1,11 +1,11 @@
-const dropdown = document.getElementById("countryFilter");
-const table = document.getElementById("holidayTable").getElementsByTagName('tbody')[0];
-
-dropdown.addEventListener("change", function() {
+document.getElementById("countryFilter").addEventListener("change", function () {
   const selected = this.value;
-  for (let i = 0; i < table.rows.length; i++) {
-    const row = table.rows[i];
-    const country = row.cells[2].innerText;
-    row.style.display = (selected === "All" || country === selected) ? "" : "none";
-  }
+  const rows = document.querySelectorAll("#holidayTable tbody tr");
+
+  rows.forEach(row => {
+    row.style.display =
+      selected === "All" || row.cells[2].innerText === selected
+        ? ""
+        : "none";
+  });
 });
